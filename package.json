@@ -1,0 +1,30 @@
+{
+    "name": "whale-vue-ssr",
+    "version": "1.0.0",
+    "description": "基于vue2.5+的服务端渲染",
+    "author": "xiangzongliang",
+    "license": "ISC",
+    "scripts": {
+        "dev": "node core/dev.js",
+        "server": ""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xiangzongliang/whale-vue-ssr.git"
+    },
+    "bugs": {
+        "url": "https://github.com/xiangzongliang/whale-vue-ssr/issues"
+    },
+    "homepage": "https://github.com/xiangzongliang/whale-vue-ssr#readme",
+    "devDependencies": {
+        "webpack": "^4.29.6",
+        "webpack-cli": "^3.2.3"
+    },
+    "dependencies": {
+        "koa": "^2.7.0",
+        "koa-router": "^7.4.0",
+        "koa-static": "^5.0.0",
+        "vue": "^2.6.8",
+        "vue-server-renderer": "^2.6.8"
+    }
+}
