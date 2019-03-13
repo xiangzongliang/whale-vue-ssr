@@ -1,35 +1,24 @@
-const Router = require('koa-router');
-const fs = require('fs');
-const path = require('path')
-let router = new Router();
+const Router = require('koa-router')
 const Vue = require('vue')
-const renderer = require('vue-server-renderer').createRenderer({
-    template: fs.readFileSync(path.join( __dirname, '../template/default.html'), 'utf-8')
-})
+const renderer = require('vue-server-renderer').createRenderer()
+let router = new Router()
+
+
+
 
 
 const app = new Vue({
-    data(){
-        return{
-            msg:'this Vue server Render'
-        }
-    },
-    template: `<div>{{ msg }}</div>`
+    template: `<div>Hello World</div>`
 })
 
 
-
-let context = {
-    title: 'hello',
-  }
-
 router.get('*', function (ctx, next) {
     // 在 2.5.0+，如果没有传入回调函数，则会返回 Promise：
-    renderer.renderToString(app,context).then(html => {
-        ctx.body = html;
+    renderer.renderToString(app).then(html => {
+        ctx.body = html
     }).catch(err => {
         console.error(err)
-    })    
+    })
 });
 
 module.exports = router;
