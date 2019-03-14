@@ -1,9 +1,9 @@
-const http = require('http')
-const http2 = require('http2')
-const path = require('path')
-const Koa = require('koa')
-const static = require('koa-static')
-const router = require('./router')
+import http from 'http'
+import http2 from 'http2'
+import path from 'path'
+import Koa from 'koa'
+import Static from 'koa-static'
+import router  from './router'
 const app = new Koa()
 
 
@@ -14,7 +14,7 @@ app.use(async (ctx, next) => {
     const ms = Date.now() - start;
     ctx.set('X-Response-time', `${ms}ms`);
 });
-app.use(static(path.join( __dirname, '../static')));
+app.use(Static(path.join( __dirname, '../static')));
 app.use(router.routes())
 
 

@@ -5,7 +5,7 @@
     "author": "xiangzongliang",
     "license": "ISC",
     "scripts": {
-        "dev": "node core/dev.js",
+        "dev": "babel-node core/dev.js",
         "server": ""
     },
     "repository": {
@@ -17,6 +17,13 @@
     },
     "homepage": "https://github.com/xiangzongliang/whale-vue-ssr#readme",
     "devDependencies": {
+        "babel-cli": "^6.26.0",
+        "babel-core": "^6.26.3",
+        "babel-plugin-transform-es2015-destructuring": "^6.23.0",
+        "babel-plugin-transform-es2015-modules-commonjs": "^6.26.2",
+        "babel-plugin-transform-es2015-parameters": "^6.24.1",
+        "babel-plugin-transform-es2015-spread": "^6.22.0",
+        "babel-plugin-transform-strict-mode": "^6.24.1",
         "webpack": "^4.29.6",
         "webpack-cli": "^3.2.3"
     },
